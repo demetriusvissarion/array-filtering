@@ -31,10 +31,20 @@ $posts = [
 // var_dump($publishedPosts);
 
 //// map
+// $modified = array_map(function ($post){
+//     $post->published = true;
+//     return $post;
+// }, $posts);
 
-$modified = array_map(function ($post){
+//// foreach
+foreach($posts as $post) {
     $post->published = true;
-    return $post;
-}, $posts);
+}
 
-var_dump($modified);
+//// map usage
+// $modified = array_map(function ($post){
+//     $post->published = true;
+//     return $post;
+// }, $posts);
+
+var_dump($posts);
