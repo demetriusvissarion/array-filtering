@@ -20,12 +20,21 @@ $posts = [
     new Post('My Fourth Post', false),
 ];
 
-$publishedPosts = array_filter($posts, function($post){
-    return $post->published;
-});
+// $publishedPosts = array_filter($posts, function($post){
+//     return $post->published;
+// });
 
-$unpublishedPosts = array_filter($posts, function($post){
-    return !$post->published;
-});
+// $unpublishedPosts = array_filter($posts, function($post){
+//     return !$post->published;
+// });
 
-var_dump($publishedPosts);
+// var_dump($publishedPosts);
+
+//// map
+
+$modified = array_map(function ($post){
+    $post->published = true;
+    return $post;
+}, $posts);
+
+var_dump($modified);
